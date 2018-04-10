@@ -25,7 +25,7 @@ services:
       CONCOURSE_POSTGRES_USER: concourse
       CONCOURSE_POSTGRES_PASSWORD: changeme
       CONCOURSE_POSTGRES_DATABASE: concourse
-  concourse-worker2:
+  concourse-worker:
     image: concourse/concourse
     privileged: true
     links: [concourse-web]
