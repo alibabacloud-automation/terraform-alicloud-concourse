@@ -31,23 +31,6 @@ output "cluster_nodes" {
   value = ["${alicloud_cs_swarm.default.nodes}"]
 }
 
-//output "cluster_node_ids" {
-//  description = "List IDs of cluster nodes."
-//  value = "${chunklist(alicloud_cs_swarm.default.nodes, 1)[0].id)}"
-//}
-//
-////output "cluster_node_private_ips" {
-////  description = "List private ips of cluster nodes."
-////  value = ["${lookup(alicloud_cs_swarm.default.nodes.*, "private_ip")}"]
-////}
-//
-//output "cluster_node_private_eips" {
-//  description = "List elastic ips of cluster nodes."
-////  count = "${var.node_number}"
-//  value = ["${alicloud_cs_swarm.default.nodes}"]
-////  lookup(data.alicloud_zones.default.zones[format("%d", length(data.alicloud_zones.default.zones) < 2 ? 0 : count.index%length(data.alicloud_zones.default.zones))], "id")}
-//}
-
 // Application
 output "app_version" {
   description = "The current version of the application."
