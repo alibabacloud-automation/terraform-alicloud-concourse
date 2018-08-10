@@ -48,6 +48,8 @@ Conditional creation
 Sometimes you need to using existing VSwitch not creating a new VSwitch resources conditionally. And the solution is to specify argument vswitch_id.
 
 ### It will not create a new VPC and VSwitch.
+
+```
 module "concourse" {
     source = "terraform-alicloud-concourse"
 
@@ -63,6 +65,7 @@ module "concourse" {
     app_name = "my-first-concourse"
     version = "1.1"
 }
+```
 
 Terraform version
 -----------------
