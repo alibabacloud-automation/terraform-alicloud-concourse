@@ -1,6 +1,7 @@
 Alicloud Swarm Cluster deployment Concourse Terraform Module
 terraform-alicloud-concourse
 =====================================================================
+**Note:** From version 3.0.0, the module [`aliyun/concourse/alicloud`](https://registry.terraform.io/modules/aliyun/concourse/alicloud) will be deprecated and use new module [`terraform-alicloud-modules/concourse/alicloud`](https://registry.terraform.io/modules/terraform-alicloud-modules/concourse/alicloud) instead.
 
 A terraform module supports to create a swarm cluster and deploy a concourse application using compose template on it.
 
@@ -11,8 +12,6 @@ These types of the module resource are supported:
 - [Security Group Rule](https://www.terraform.io/docs/providers/alicloud/r/security_group_rule.html)
 - [Swarm Cluster](https://www.terraform.io/docs/providers/alicloud/r/cs_swarm.html)
 - [Container Application](https://www.terraform.io/docs/providers/alicloud/r/cs_application.html)
-
-**Note:** From version 3.0.0, the module `aliyun/concourse/alicloud` will be deprecated and use new module `terraform-alicloud-modules/concourse/alicloud` instead.
 
 ----------------------
 
