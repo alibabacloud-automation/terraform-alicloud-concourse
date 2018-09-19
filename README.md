@@ -26,8 +26,6 @@ You can use this in your terraform template with the following steps.
     module "concourse" {
         source = "terraform-alicloud-modules/concourse/alicloud"
 
-        region = "cn-beijing"
-
         vpc_name = "tf-concourse-vpc"
         vswitch_name = "tf-concourse-vsw"
 
@@ -59,7 +57,7 @@ Sometimes you need to using existing VSwitch not creating a new VSwitch resource
 
 ### It will not create a new VPC and VSwitch.
 module "concourse" {
-    source = "terraform-alicloud-concourse"
+    "terraform-alicloud-modules/concourse/alicloud"
 
     vswitch_id = "vsw-abc12345"
 
