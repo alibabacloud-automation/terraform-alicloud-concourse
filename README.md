@@ -12,6 +12,7 @@ These types of the module resource are supported:
 - [Swarm Cluster](https://www.terraform.io/docs/providers/alicloud/r/cs_swarm.html)
 - [Container Application](https://www.terraform.io/docs/providers/alicloud/r/cs_application.html)
 
+**Note:** From version 3.0.0, the module `aliyun/concourse/alicloud` will be deprecated and use new module `terraform-alicloud-modules/concourse/alicloud` instead.
 
 ----------------------
 
@@ -19,24 +20,33 @@ Usage
 -----
 You can use this in your terraform template with the following steps.
 
-```
-module "concourse" {
-    source = "terraform-alicloud-concourse"
+1. Adding a module resource to your template, e.g. main.tf
 
-    alicloud_access_key = "Abc123"
-    alicloud_secret_key = "Abc1234"
-    region = "cn-beijing"
+    ```
+    module "concourse" {
+        source = "terraform-alicloud-modules/concourse/alicloud"
 
-    vpc_name = "tf-concourse-vpc"
-    vswitch_name = "tf-concourse-vsw"
+        region = "cn-beijing"
 
-    cluster_name = "tf-for-concourse"
-    node_number = 1
+        vpc_name = "tf-concourse-vpc"
+        vswitch_name = "tf-concourse-vsw"
 
-    app_name = "my-first-concourse"
-    version = "1.0"
-}
-```
+        cluster_name = "tf-for-concourse"
+        node_number = 1
+
+        app_name = "my-first-concourse"
+        version = "1.0"
+    }
+    ```
+
+2. Setting values for the following variables:
+
+    through environment variables
+
+    - ALICLOUD_ACCESS_KEY
+    - ALICLOUD_SECRET_KEY
+    - ALICLOUD_REGION
+
 
 **Note:** `cluster_cidr`: The swarm cluster cidr block. It cannot be equals to vpc's or vswitch's and cannot be in them. If vpc's cidr block is `172.16.XX.XX/XX`,
           it had better to `192.168.XX.XX/XX` or `10.XX.XX.XX/XX`
@@ -50,10 +60,6 @@ Sometimes you need to using existing VSwitch not creating a new VSwitch resource
 ### It will not create a new VPC and VSwitch.
 module "concourse" {
     source = "terraform-alicloud-concourse"
-
-    alicloud_access_key = "Abc123"
-    alicloud_secret_key = "Abc1234"
-    region = "cn-beijing"
 
     vswitch_id = "vsw-abc12345"
 
