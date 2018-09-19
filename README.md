@@ -1,7 +1,6 @@
 Alicloud Swarm Cluster deployment Concourse Terraform Module
 terraform-alicloud-concourse
 =====================================================================
-**Note:** From version 3.0.0, the module [`aliyun/concourse/alicloud`](https://registry.terraform.io/modules/aliyun/concourse/alicloud) will be deprecated and use new module [`terraform-alicloud-modules/concourse/alicloud`](https://registry.terraform.io/modules/terraform-alicloud-modules/concourse/alicloud) instead.
 
 A terraform module supports to create a swarm cluster and deploy a concourse application using compose template on it.
 
@@ -23,7 +22,7 @@ You can use this in your terraform template with the following steps.
 
     ```
     module "concourse" {
-        source = "terraform-alicloud-modules/concourse/alicloud"
+        source = "aliyun/concourse/alicloud"
 
         vpc_name = "tf-concourse-vpc"
         vswitch_name = "tf-concourse-vsw"
@@ -55,8 +54,10 @@ Conditional creation
 Sometimes you need to using existing VSwitch not creating a new VSwitch resources conditionally. And the solution is to specify argument vswitch_id.
 
 ### It will not create a new VPC and VSwitch.
+
+```
 module "concourse" {
-    "terraform-alicloud-modules/concourse/alicloud"
+    source = "aliyun/concourse/alicloud"
 
     vswitch_id = "vsw-abc12345"
 
@@ -66,6 +67,7 @@ module "concourse" {
     app_name = "my-first-concourse"
     version = "1.1"
 }
+```
 
 Terraform version
 -----------------
