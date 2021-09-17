@@ -75,7 +75,7 @@ Terraform version 0.11.0 or newer and Provider version 1.9.0 or newer are requir
 
 Authors
 -------
-Created and maintained by He Guimin(@xiaozhu36, heguimin36@163.com)
+Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com)
 
 License
 -------
