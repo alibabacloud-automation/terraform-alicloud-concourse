@@ -1,4 +1,4 @@
-# common variables
+qq# common variables
 variable "availability_zone" {
   description = "The available zone to launch vswitch and cluster."
   default     = ""
@@ -123,3 +123,4 @@ variable "confirm_blue_green" {
   description = "Confirm a application release which in blue_green."
   default     = true
 }
+
